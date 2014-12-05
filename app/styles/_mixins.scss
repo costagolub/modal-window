@@ -1,0 +1,38 @@
+// px to rems
+@function calcul($size) {
+  @return $size * ( 1 / $baseFontSize ) + rem;
+}
+
+// Adjust size to certain units
+@mixin adjustSize($size, $units: rem) {
+  @if $units == px {
+    font-size: $size + px;
+  }
+  @if $units == em {
+    font-size: $size + px;
+    font-size: $size * ( 1 / $baseFontSize ) + em;
+  }
+  @if $units == rem {
+    font-size: $size + px;
+    font-size: $size * ( 1 / $baseFontSize ) + rem;
+  }
+}
+
+// clearfix
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+// border-radius
+%border-radius {
+  border-radius: calcul(8);
+}
+
+
+

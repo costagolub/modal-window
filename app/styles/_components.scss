@@ -1,0 +1,36 @@
+/*------------------------------------------------------------
+btns
+-------------------------------------------------------------- */
+.btn {
+  text-decoration: none;
+  color: $white;
+  background: $asphalt;
+  @extend %border-radius;
+  padding: 4px 10px; // fallback
+  padding: calcul(4) calcul(10);
+  @include adjustSize(18, em);
+  display: inline-block;
+  outline: none;
+  border: none;
+  &.btn--red {
+    background: $burningSand;
+    &:hover {
+      background: darken($burningSand, 30%);
+      color: lighten($white, 15%);
+    }
+  }
+}
+
+
+/*------------------------------------------------------------
+form
+-------------------------------------------------------------- */
+.form-field {
+  display: block;
+  margin-bottom: calcul(10);
+  width: 100%;
+  @extend %border-radius;
+  border: 1px solid rgba($coffeeBean, 0.3);
+  padding: calcul(8);
+  outline: none;
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Modal window</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css" media="all">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+
+  <a href="#" class="btn btn--red btn-modal--open">Open the window</a>
+
+  <!-- begin modal window  -->
+  <div class="modal">
+    <div class="modal-content">
+      <h2 class="modal-content__title">This is a adaprive Modal Window</h2>
+      <p>Here we put some text such as bla,bla,bla</p>
+      <h3>And here is a subscribe form (for instance)</h3>
+      <form action="">
+        <input type="email" placeholder="Your e-mail" class="form-field">
+        <input type="submit" class="btn btn--red" value="Subscribe">
+      </form>
+    </div>
+  </div>
+  <!-- end modal window -->
+
+
+  <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+  <!-- initiate modal window -->
+  <script>
+    var modal = new APP.Modal({
+      containerClass: 'modal',
+      effect: 'slideFromLeft'
+    });
+    modal.init();
+  </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+// overlay
+.modal-window-overlay {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  background: $coffeeBean;
+  background: rgba($coffeeBean, 0.7);
+  transition: all 0.3s;
+  &.modal-window-overlay--open {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+// modal window
+.modal {
+  max-width: 600px;
+  min-width: 320px;
+  width: 100%;
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calcul(10);
+  bottom: 0;
+  margin: auto;
+  height: auto;
+  z-index: 2000;
+  &.modal-window--open {
+    visibility: visible;
+  }
+  .modal-content__title {
+    padding: 0 calcul(20) calcul(20) 0;
+    margin: 0;
+  }
+}
+.btn.btn-modal--close {
+  position: absolute;
+  right: calcul(100);
+  top: calcul(10);
+  cursor: pointer;
+  text-indent: -9999px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGxJREFUeNpiYBhxwB+I9bGI60PliALxQPwfiN+jGaYPFfsPVUPQJf+RMMwwZENgGK/LsGl4j0NMn5CrsBlGsiGEDMNpCBMto54qXiM7sNG9pgDEAkj8D0DsAMUfkMQFoGppnyCpmkWGCQAIMADDTkJNpsN+EwAAAABJRU5ErkJggg==');
+  width: 16px;
+  height: 16px;
+  border: none;
+  outline: none;
+  display: block;
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+
+.modal-content {
+  background: #fff;
+  @extend %border-radius;
+  padding: calcul(15) calcul(15);
+  width: 100%;
+  overflow: hidden;
+}
+
+/*------------------------------------------------------------
+Effect #1: Slide from the left
+-------------------------------------------------------------- */
+.modal-effect-1 .modal-content {
+  transform: translateX(-60%);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+}
+.modal-window--open .btn-modal--close {
+  right: calcul(16);
+  opacity: 1;
+}
+.modal-window--open.modal-effect-1 .modal-content {
+  transform: translateX(0);
+  opacity: 1;
+}
