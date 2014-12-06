@@ -40,7 +40,7 @@
 }
 .btn.btn-modal--close {
   position: absolute;
-  right: calcul(100);
+  right: calcul(10);
   top: calcul(10);
   cursor: pointer;
   text-indent: -9999px;
@@ -52,8 +52,6 @@
   border: none;
   outline: none;
   display: block;
-  opacity: 0;
-  transition: all 0.2s linear;
 }
 
 .modal-content {
@@ -72,11 +70,92 @@ Effect #1: Slide from the left
   opacity: 0;
   transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
 }
-.modal-window--open .btn-modal--close {
+.modal-effect-1 .btn-modal--close {
+  opacity: 0;
+  right: calcul(100);
+  transition: all 0.2s linear;
+}
+.modal-effect-1.modal-window--open .btn-modal--close {
   right: calcul(16);
   opacity: 1;
 }
 .modal-window--open.modal-effect-1 .modal-content {
   transform: translateX(0);
+  opacity: 1;
+}
+
+/*------------------------------------------------------------
+Effect #2: Fade in and scale up
+-------------------------------------------------------------- */
+.modal-effect-2 .modal-content {
+  transform: scale(0.7);
+  opacity: 0;
+  transition: all 0.3s;
+}
+.modal-effect-2 .btn-modal--close {
+  opacity: 0;
+  transform: scale(2);
+  transition: all 0.1s linear;
+}
+.modal-effect-2.modal-window--open .btn-modal--close {
+  opacity: 1;
+  transform: scale(1);
+}
+.modal-window--open.modal-effect-2 .modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+/*------------------------------------------------------------
+Effect #3: Slide from the bottom
+-------------------------------------------------------------- */
+.modal-effect-3 .modal-content {
+  transform: translateY(30%);
+  opacity: 0;
+  transition: all 0.3s;
+}
+.modal-effect-3 .btn-modal--close {
+  transform: translateY(-30%);
+  opacity: 0;
+  transition: all 0.1s;
+}
+.modal-effect-3.modal-window--open .btn-modal--close {
+  transform: translateY(0);
+  opacity: 1;
+}
+.modal-window--open.modal-effect-3 .modal-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+/*------------------------------------------------------------
+Effect #4: Old rotate
+-------------------------------------------------------------- */
+.modal-effect-4 .modal-content {
+  transform: scale(0) rotate(720deg);
+  opacity: 0;
+  transition: all 0.5s;
+}
+.modal-effect-4 .btn-modal--close {
+  opacity: 0;
+  transition: all 0.1s ease-in;
+}
+.modal-effect-4.modal-window--open .btn-modal--close {
+  opacity: 1;
+}
+.modal-window--open.modal-effect-4 .modal-content {
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+/*------------------------------------------------------------
+Effect #5: Uncover
+-------------------------------------------------------------- */
+.modal-effect-5 .modal-content {
+  perspective: 1300px;
+  transform-style: preserve-3d;
+  transform: translateZ(600px) rotateX(100deg);
+  opacity: 0;
+}
+.modal-window--open.modal-effect-5 .modal-content {
+  transition: all 0.3s ease-in;
+  transform: translateZ(0px) rotateX(0deg);
   opacity: 1;
 }

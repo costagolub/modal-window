@@ -13,7 +13,11 @@
 
     // effects
     this.effects = {
-      slideFromLeft : 'modal-effect-1'
+      slideFromLeft : 'modal-effect-1',
+      fadeInScaleUp : 'modal-effect-2',
+      slideFromBottom: 'modal-effect-3',
+      oldRotate: 'modal-effect-4',
+      uncover: 'modal-effect-5'
     }
 
     // defaults
