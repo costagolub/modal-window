@@ -29,7 +29,7 @@ var modal = new APP.Modal({
     overlayClassOpen: 'modal-window-overlay--open', // only for CSS rules
     overlayClass: 'modal-window-overlay', // for CSS rules only
     closeBtnClass: 'btn btn-modal--close', // for CSS rules only
-    openBtnClass: 'btn btn-modal--open', //  for CSS rules only
+    openBtnClass: 'btn btn-modal--open', // anchor link classes to call window
     effect: 'uncover' // what effect use for modal window
 });
 
@@ -39,6 +39,8 @@ modal.init();
 
 Snippet code HTML:
 ```html
+<a href="#" class="btn btn--red btn-modal--open">Open the window</a>
+
 <!-- name of modal window -->
 <div class="modal">
   <!-- container of content -->
